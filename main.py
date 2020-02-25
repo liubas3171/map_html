@@ -58,7 +58,7 @@ def get_coordinates(lst):
         location = geolocator.geocode(tpl[1])
         # if geocode return None
         try:
-            coordinates.append(tuple((tpl[0], location.latlng)))  # (location.latitude, location.longitude))))
+            coordinates.append(tuple((tpl[0], (location.latitude, location.longitude))))
         except AttributeError:
             continue
     return coordinates
